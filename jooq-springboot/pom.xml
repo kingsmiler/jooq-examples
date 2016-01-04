@@ -230,6 +230,25 @@
             <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.7.1</version>
+                <dependencies>
+                    <!-- 数据库依赖  -->
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <!-- 触发任务及目标  -->
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
                 <configuration>
                     <!-- 数据库配置 -->
                     <jdbc>
@@ -330,23 +349,6 @@
                         </target>
                     </generator>
                 </configuration>
-                <executions>
-                    <!-- 触发任务及目标  -->
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <!-- 数据库依赖  -->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
         </plugins>
