@@ -1,12 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.hascode.tutorial</groupId>
-	<artifactId>jooq-maven-tutorial</artifactId>
-	<version>1.0.0</version>
+	<parent>
+		<artifactId>jooq-manual</artifactId>
+		<groupId>org.amc.jooq</groupId>
+		<version>1.0</version>
+	</parent>
 
-	<url>http://www.hascode.com/</url>
-	
+	<artifactId>jooq-maven-plugin-sample</artifactId>
+
 	<prerequisites>
 		<maven>3.2.1</maven>
 	</prerequisites>
@@ -14,7 +16,6 @@
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
-		<mysql.version>5.1.30</mysql.version>
 	</properties>
 
 	<profiles>
@@ -36,17 +37,12 @@
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
-			<version>3.3.2</version>
+			<version>${jooq.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq-codegen</artifactId>
-			<version>3.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
+            <version>${jooq.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -64,7 +60,7 @@
 			<plugin>
 				<groupId>org.jooq</groupId>
 				<artifactId>jooq-codegen-maven</artifactId>
-				<version>3.3.2</version>
+				<version>${jooq.version}</version>
 				<executions>
 					<execution>
 						<goals>
