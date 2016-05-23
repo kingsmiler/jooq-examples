@@ -19,7 +19,7 @@ public class GeneratedSourcesTest {
     public static void main(String[] args) {
         String userName = "root";
         String password = "mysqlroot";
-        String url = "jdbc:mysql://localhost:3306/library";
+        String url = "jdbc:mysql://mysqlhost:13306/jooq?useSSL=false";
 
         // Connection is the only JDBC resource that we need
         // PreparedStatement and ResultSet are handled by jOOQ, internally

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.7.0.xsd">
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.8.0.xsd">
     <!-- Configure the database connection here -->
     <jdbc>
         <driver>com.mysql.jdbc.Driver</driver>
-        <url>jdbc:mysql://localhost:3306/library</url>
+        <url>jdbc:mysql://mysqlhost:13306/jooq?useSSL=false</url>
         <user>root</user>
         <password>mysqlroot</password>
     </jdbc>
@@ -21,7 +21,7 @@
             <name>org.jooq.util.mysql.MySQLDatabase</name>
             <!-- The database schema (or in the absence of schema support, in your RDBMS this
             can be the owner, user, database name) to be generated -->
-            <inputSchema>library</inputSchema>
+            <inputSchema>jooq</inputSchema>
             <!-- All elements that are generated from your schema
             (A Java regular expression. Use the pipe to separate several expressions)
             Watch out for case-sensitivity. Depending on your database, this might be important! -->
@@ -36,6 +36,7 @@
             <packageName>org.amc.jooq.generated</packageName>
             <!-- The destination directory of your generated classes -->
             <directory>C:/workspace/jooq/src</directory>
+            <encoding>UTF-8</encoding>
         </target>
     </generator>
 </configuration>
