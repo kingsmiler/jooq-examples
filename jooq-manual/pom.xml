@@ -10,6 +10,7 @@
     <modules>
         <module>jooq-in-seven-steps</module>
         <module>jooq-maven-plugin-sample</module>
+        <module>jooq-academy</module>
     </modules>
     <packaging>pom</packaging>
 
